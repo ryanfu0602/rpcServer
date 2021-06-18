@@ -29,8 +29,8 @@ func (*Article) GetById(req GetByIdRequest, res *GetByIdResponse) error {
 }
 
 func main() {
-	rpc.Register(new(Article)) // 注册rpc服务
-	rpc.HandleHTTP()           // 采用http协议作为rpc载体
+	rpc.Register(new(Article))
+	rpc.HandleHTTP()
 
 	lis, err := net.Listen("tcp", "127.0.0.1:8095")
 	if err != nil {
